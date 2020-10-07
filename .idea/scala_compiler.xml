@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="codea2_9395" />
-    <profile name="sbt 2" modules="codea2">
+    <profile name="sbt 2" modules="codea2,comp-sys-assignment2">
       <parameters>
         <parameter value="-Xsource:2.11" />
       </parameters>
