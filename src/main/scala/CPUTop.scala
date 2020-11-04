@@ -52,8 +52,8 @@ class CPUTop extends Module {
 
   // ALU
   alu.io.a := registerFile.io.a
-  //val sign = 0.U(32.W) + programMemory.io.instructionRead(15, 0)
-  val bRes = Mux( controlUnit.io.ALUsrc , registerFile.io.b , programMemory.io.instructionRead(15, 0))
+  val sign = 0.U(32.W) + programMemory.io.instructionRead(15, 0)
+  val bRes = Mux( controlUnit.io.ALUsrc , sign, registerFile.io.b)
   alu.io.b := bRes
   alu.io.sel := controlUnit.io.ALUop
 
@@ -69,7 +69,7 @@ class CPUTop extends Module {
   dataMemory.io.writeEnable := controlUnit.io.memWrite
 
   // Output (ALU or DataMemory)
-  val outALUOrDataMemory = Mux( controlUnit.io.memToReg, alu.io.result , dataMemory.io.dataRead)
+  val outALUOrDataMemory = Mux( controlUnit.io.memToReg, dataMemory.io.dataRead, alu.io.result)
 
   // RegisterFile
   registerFile.io.aSel := programMemory.io.instructionRead(27, 24)

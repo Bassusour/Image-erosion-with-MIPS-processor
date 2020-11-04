@@ -13,39 +13,39 @@ class RegisterFile extends Module {
     val b = Output(UInt(32.W))
   })
 
+  val R0 = Reg(UInt(32.W))
   val R1 = Reg(UInt(32.W))
   val R2 = Reg(UInt(32.W))
   val R3 = Reg(UInt(32.W))
   val R4 = Reg(UInt(32.W))
-  val R5 = Reg(UInt(32.W))
 
   io.a := 1.U
   io.b := 1.U
 
   when (io.writeEnable) {
     switch (io.writeSel) {
-      is(0.U) { R1 := io.writeData }
-      is(1.U) { R2 := io.writeData }
-      is(2.U) { R3 := io.writeData }
-      is(3.U) { R4 := io.writeData }
-      is(4.U) { R5 := io.writeData }
+      is(0.U) { R0 := io.writeData }
+      is(1.U) { R1 := io.writeData }
+      is(2.U) { R2 := io.writeData }
+      is(3.U) { R3 := io.writeData }
+      is(4.U) { R4 := io.writeData }
     }
   }
 
   switch (io.aSel) {
-    is(0.U) { io.a := R1 }
-    is(1.U) { io.a := R2 }
-    is(2.U) { io.a := R3 }
-    is(3.U) { io.a := R4 }
-    is(4.U) { io.a := R5 }
+    is(0.U) { io.a := R0 }
+    is(1.U) { io.a := R1 }
+    is(2.U) { io.a := R2 }
+    is(3.U) { io.a := R3 }
+    is(4.U) { io.a := R4 }
   }
 
   switch (io.bSel) {
-    is(0.U) { io.b := R1 }
-    is(1.U) { io.b := R2 }
-    is(2.U) { io.b := R3 }
-    is(3.U) { io.b := R4 }
-    is(4.U) { io.b := R5 }
+    is(0.U) { io.b := R0 }
+    is(1.U) { io.b := R1 }
+    is(2.U) { io.b := R2 }
+    is(3.U) { io.b := R3 }
+    is(4.U) { io.b := R4 }
   }
 
 }

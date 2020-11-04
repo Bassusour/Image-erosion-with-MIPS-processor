@@ -1,1 +1,1 @@
-["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["C:\\Users\\basti\\OneDrive\\Dokumenter\\Comp-Sys-Assignment2\\build.sbt","8d7aaf86fa37155fe5416e314d487c2aa0466f86"]],"lastModifiedTimes":[]}]
+["sbt.Task[scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]",{"hashes":[["/home/theo/Desktop/Skole/ComputerSystemer/codeA2/build.sbt","d06c5e3a509ff31a6df192570d9c69603696c80d"]],"lastModifiedTimes":[]}]
